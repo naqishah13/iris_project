@@ -10,11 +10,6 @@ from pymongo.mongo_client import MongoClient
 from pymongo.server_api import ServerApi
 from urllib.parse import quote_plus
 
-# Get MongoDB credentials and URI
-username = quote_plus(os.getenv("MONGO_USER", "naqishah"))
-password = quote_plus(os.getenv("MONGO_PASS", "lV0Age4INtyhLVQ9"))
-cluster_url = os.getenv("MONGO_CLUSTER", "cluster0.7jsdwbv.mongodb.net")
-
 mongo_uri = "mongodb+srv://naqishah:lV0Age4INtyhLVQ9@cluster0.7jsdwbv.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 
 # Connect to MongoDB Atlas and insert data
@@ -22,7 +17,6 @@ try:
     client = MongoClient(mongo_uri, server_api=ServerApi('1'))
     db = client['iris_database']  # Replace with your actual database name
     collection = db['iris_data_predictions']  # Replace with your actual collection name
-    print("Connected to MongoDB successfully.")
     
     # Load Dataset
     iris = load_iris()
@@ -39,6 +33,7 @@ try:
     # Insert Accuracy to MongoDB
     result = {"model": "RandomForest", "accuracy": accuracy}
     collection.insert_one(result)
+     print("Connected to MongoDB successfully.")
     
     print("Model accuracy: {}".format(accuracy))
     print("Results: {}".format(result))
