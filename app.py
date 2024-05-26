@@ -57,23 +57,23 @@ except OperationFailure as e:
 # In this example, we're going to create four documents and then 
 # insert them all with insert_many().
 
-recipe_documents = [{ "name": "elotes", "ingredients": ["corn", "mayonnaise", "cotija cheese", "sour cream", "lime"], "prep_time": 35 },
-                    { "name": "loco moco", "ingredients": ["ground beef", "butter", "onion", "egg", "bread bun", "mushrooms"], "prep_time": 54 },
-                    { "name": "patatas bravas", "ingredients": ["potato", "tomato", "olive oil", "onion", "garlic", "paprika"], "prep_time": 80 },
-                    { "name": "fried rice", "ingredients": ["rice", "soy sauce", "egg", "onion", "pea", "carrot", "sesame oil"], "prep_time": 40 }]
+# recipe_documents = [{ "name": "elotes", "ingredients": ["corn", "mayonnaise", "cotija cheese", "sour cream", "lime"], "prep_time": 35 },
+#                     { "name": "loco moco", "ingredients": ["ground beef", "butter", "onion", "egg", "bread bun", "mushrooms"], "prep_time": 54 },
+#                     { "name": "patatas bravas", "ingredients": ["potato", "tomato", "olive oil", "onion", "garlic", "paprika"], "prep_time": 80 },
+#                     { "name": "fried rice", "ingredients": ["rice", "soy sauce", "egg", "onion", "pea", "carrot", "sesame oil"], "prep_time": 40 }]
 
-try: 
-    result = collection.insert_many(recipe_documents)
+# try: 
+#     result = collection.insert_many(recipe_documents)
 
-# return a friendly error if the operation fails
-except OperationFailure:
-    print("An authentication error was received. Are you sure your database user is authorized to perform write operations?")
-    sys.exit(1)
-else:
-    inserted_count = len(result.inserted_ids)
-    print("I inserted %x documents." %(inserted_count))
+# # return a friendly error if the operation fails
+# except OperationFailure:
+#     print("An authentication error was received. Are you sure your database user is authorized to perform write operations?")
+#     sys.exit(1)
+# else:
+#     inserted_count = len(result.inserted_ids)
+#     print("I inserted %x documents." %(inserted_count))
 
-    print("\n")
+#     print("\n")
     
 
 
