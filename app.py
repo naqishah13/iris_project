@@ -63,7 +63,7 @@ recipe_documents = [{ "name": "elotes", "ingredients": ["corn", "mayonnaise", "c
                     { "name": "fried rice", "ingredients": ["rice", "soy sauce", "egg", "onion", "pea", "carrot", "sesame oil"], "prep_time": 40 }]
 
 try: 
-    result = my_collection.insert_many(recipe_documents)
+    result = collection.insert_many(recipe_documents)
 
 # return a friendly error if the operation fails
 except OperationFailure:
