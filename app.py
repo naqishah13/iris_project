@@ -25,7 +25,7 @@ mongo_uri = (
 )
 
 # Debugging: print the URI (excluding password for security reasons)
-print(f"MongoDB URI: mongodb+srv://{encoded_username}:<password>@{cluster_url}/{auth_db}?retryWrites=true&w=majority&tls=true")
+print(f"MongoDB URI: mongodb+srv://{username}:{password}@{cluster_url}/{auth_db}?retryWrites=true&w=majority&tls=true")
 
 # Connect to MongoDB Atlas and insert data
 try:
