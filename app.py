@@ -28,3 +28,4 @@ result = {"model": "RandomForest", "accuracy": accuracy}
 collection.insert_one(result)
 
 print(f"Model accuracy: {accuracy}")
+print(f"Results: {result}")
