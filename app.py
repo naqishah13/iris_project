@@ -33,7 +33,7 @@ try:
     # Insert Accuracy to MongoDB
     result = {"model": "RandomForest", "accuracy": accuracy}
     collection.insert_one(result)
-     print("Connected to MongoDB successfully.")
+    print("Connected to MongoDB successfully.")
     
     print("Model accuracy: {}".format(accuracy))
     print("Results: {}".format(result))
